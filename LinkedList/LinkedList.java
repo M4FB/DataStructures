@@ -35,4 +35,24 @@ public class LinkedList <T> {
         }
         return count;
     }
+
+    public void destroyList(){
+        firstNode = null;
+    }
+
+    int search(T searchItem){
+        int pos = 0;
+        Node<T> currentNode = firstNode;
+
+        while (currentNode != null){
+            if (currentNode.data.equals(searchItem) ){
+                return pos;
+            }
+            currentNode = currentNode.nextNode;
+            pos++;
+        }
+        return -1;
+    }
+
+
 }
