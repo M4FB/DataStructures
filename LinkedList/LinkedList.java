@@ -13,7 +13,7 @@ class Node <T>{
 public class LinkedList <T> {
     private Node<T> firstNode;
 
-    public LinkedList(Node<T> firstNode){
+    public LinkedList(){
         this.firstNode = null;
     }
 
@@ -40,12 +40,12 @@ public class LinkedList <T> {
         firstNode = null;
     }
 
-    int search(T searchItem){
+    public int search(T dataToSearch){
         int pos = 0;
         Node<T> currentNode = firstNode;
 
         while (currentNode != null){
-            if (currentNode.data.equals(searchItem) ){
+            if (currentNode.data.equals(dataToSearch) ){
                 return pos;
             }
             currentNode = currentNode.nextNode;
@@ -53,6 +53,57 @@ public class LinkedList <T> {
         }
         return -1;
     }
+
+    public void insertFirst(T data){
+        Node<T> newNode = new Node<>(data);
+
+        if (firstNode == null){
+            firstNode = newNode;
+        } else {
+            newNode.nextNode = firstNode;
+            firstNode = newNode;            
+        }
+    }
+
+    public void insertLast(T data) {
+        Node<T> newNode = new Node<>(data);
+    
+        if (firstNode == null) {
+            firstNode = newNode;
+        } else {
+            Node<T> currentNode = firstNode;
+            while (currentNode.nextNode != null) {
+                currentNode = currentNode.nextNode;
+            }
+            currentNode.nextNode = newNode;
+        }
+    }
+    
+
+    public void printList(){
+        Node<T> currentNode = firstNode;
+
+        while (currentNode != null){
+            System.out.print(currentNode.data + " -> ");
+            currentNode = currentNode.nextNode;
+        }
+        System.out.print("null");        
+    }
+
+
+
+
+    // public void removeConcurrentEqual(){
+    //     Node<T> currentNode = firstNode;
+    //     while (currentNode != null){
+    //         if (currentNode.data.equals(currentNode.nextNode.data)){
+    //             currentNode.nextNode = currentNode.nextNode.nextNode;
+    //         }
+    //         currentNode = currentNode.nextNode;
+    //     }
+
+    // }
+
 
 
 }
