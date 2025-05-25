@@ -1,6 +1,14 @@
+package structures;
+
+/**
+ * Node -> Representa a un nodo de la lista enlazada
+ * 
+ * @param <T> El tipo de dato almacenado en este nodo.
+ */
+
 class Node <T>{
-    public T data;
-    public Node<T> nextNode;
+    public T data; // El dato que almacena el nodo
+    public Node<T> nextNode; // La referencia al siguiente nodo en la lista enlazada
 
     public Node(T data){
         this.data = data;
@@ -8,7 +16,20 @@ class Node <T>{
     }
 }
 
-
+/**
+ * LinkedList -> Representa una lista enlazada generica.
+ * 
+ * @param <T> El tipo de dato almacenado en este nodo.
+ * 
+ * Esta clase representa las operaciones más basicas para una lista enlazada como:
+ * - Insertar elementos al inicio o al final de la lista
+ * - Eliminar elementos segun su valor
+ * - Buscar elementos segun su valor
+ * - Imprimir toda la lista
+ * - Verificar si la lista esta vacia
+ * - Obtener la longitud de la lista
+ * - Destruir la lista
+ */
 
 public class LinkedList <T> {
     private Node<T> firstNode;
