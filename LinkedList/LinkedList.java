@@ -72,11 +72,37 @@ public class LinkedList <T> {
             firstNode = newNode;
         } else {
             Node<T> currentNode = firstNode;
+
             while (currentNode.nextNode != null) {
                 currentNode = currentNode.nextNode;
             }
             currentNode.nextNode = newNode;
         }
+    }
+
+    public void removeNode(T data){
+
+        if (firstNode == null){
+            System.out.println("La lista esta vacia");
+            return;
+        }
+
+        if (firstNode.data.equals(data)) {
+            firstNode = firstNode.nextNode;
+            return;
+        }
+
+        //manejo de el resto de la lista
+        Node<T> currentNode = firstNode;
+
+        while (currentNode.nextNode != null){
+            if (currentNode.nextNode.data.equals(data)) {
+                currentNode.nextNode = currentNode.nextNode.nextNode;
+                return;
+            }
+            currentNode = currentNode.nextNode;
+        }
+        System.out.println("No se encontro el elemento en la lista");
     }
     
 
