@@ -1,4 +1,4 @@
-package actividad2;
+package actividad2.structures;
 
 import exceptions.ExceptionIsEmpty;
 
