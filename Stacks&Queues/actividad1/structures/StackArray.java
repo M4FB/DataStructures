@@ -6,6 +6,8 @@ public class StackArray<E> implements Stack<E>{
     private E[] array;
     private int tope;
 
+    //se suprimio el warning causado por el casteo
+    @SuppressWarnings("unchecked")
     public StackArray(int n){
         this.array = (E[])new Object[n];
         tope = -1;
